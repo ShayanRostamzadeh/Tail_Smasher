@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="56a1fffe-d648-43b4-a485-d4ce0a42040a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UiButtonPlayerProber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Timer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TailSmasher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnteranceScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PausePlayButton.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/AddForceTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AddForceTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AddTorqueTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ElapsedTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIButtonPlayerProber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UiButtonPlayerProber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyFollow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Timer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TailSmasher.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PausePlayButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnteranceScene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1adC9OyRfvFQaEcsmOTXPeBvJs5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="do_not_show_Android_plugin_suggestion" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.splitter.proportion" value="0.29810902" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56a1fffe-d648-43b4-a485-d4ce0a42040a" name="Default Changelist" comment="" />
+      <created>1587055932922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587055932922</updated>
+      <workItem from="1587055938039" duration="2147000" />
+      <workItem from="1587105536656" duration="2230000" />
+      <workItem from="1587131136983" duration="3979000" />
+      <workItem from="1587211276192" duration="47000" />
+      <workItem from="1587217903846" duration="3955000" />
+      <workItem from="1587222073447" duration="2662000" />
+      <workItem from="1587286834240" duration="4503000" />
+      <workItem from="1587293976829" duration="2026000" />
+      <workItem from="1587297666154" duration="330000" />
+      <workItem from="1587360937533" duration="3584000" />
+      <workItem from="1587365827106" duration="906000" />
+      <workItem from="1587366901265" duration="3741000" />
+      <workItem from="1587467144413" duration="795000" />
+      <workItem from="1587551298246" duration="149000" />
+      <workItem from="1587634184412" duration="2669000" />
+      <workItem from="1587638727438" duration="246000" />
+      <workItem from="1587639015085" duration="2860000" />
+      <workItem from="1587716863521" duration="2974000" />
+      <workItem from="1587728971040" duration="611000" />
+      <workItem from="1587743450561" duration="469000" />
+      <workItem from="1587800277254" duration="1927000" />
+      <workItem from="1587802835003" duration="798000" />
+      <workItem from="1587813670188" duration="2123000" />
+      <workItem from="1587815819502" duration="3000" />
+      <workItem from="1587815902590" duration="653000" />
+      <workItem from="1587973725725" duration="436000" />
+      <workItem from="1588176414624" duration="4481000" />
+      <workItem from="1588238695867" duration="7687000" />
+      <workItem from="1588249878437" duration="3783000" />
+      <workItem from="1588308580189" duration="3520000" />
+      <workItem from="1588314808516" duration="553000" />
+      <workItem from="1588315445975" duration="4074000" />
+      <workItem from="1588319590398" duration="20000" />
+      <workItem from="1588321149713" duration="3544000" />
+      <workItem from="1588325399846" duration="11000" />
+      <workItem from="1588490331030" duration="69000" />
+      <workItem from="1590669065691" duration="519000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="225" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587297983065">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="225" y="66" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587297983065" />
+    <state x="69" y="119" key="FileChooserDialogImpl" timestamp="1587295764945">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="69" y="119" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587295764945" />
+    <state x="505" y="270" key="LayersDialog" timestamp="1587369302570">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="505" y="270" key="LayersDialog/0.0.1536.824@0.0.1536.824" timestamp="1587369302570" />
+    <state x="549" y="101" key="RiderGenerateDialog" timestamp="1588241992301">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="101" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1588241992301" />
+    <state x="345" y="79" width="1089" height="719" key="SettingsEditor" timestamp="1590669582564">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="345" y="79" width="1089" height="719" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590669582564" />
+    <state x="426" y="188" key="run.anything.popup" timestamp="1587131605142">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="426" y="188" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587131605142" />
+  </component>
+</project>
