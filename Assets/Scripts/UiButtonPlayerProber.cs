@@ -6,24 +6,37 @@ using UnityEngine.EventSystems;
 
 public class UiButtonPlayerProber : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private bool turnRight = false;
-    [SerializeField] private bool turnLeft = false;
+    public bool turnRight = false;
+    public bool turnLeft = false;
     
     private GameObject playerReference;
-    private PlayerController playerScript;
+    private PlayerController _playerScript;
 
     private void Start()
     {
         playerReference = GameObject.FindWithTag("Player");
-        playerScript = playerReference.GetComponent<PlayerController>();
+        _playerScript = playerReference.GetComponent<PlayerController>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (turnLeft)
-            playerScript.TurnLeft();
+            _playerScript.TurnLeft();
         else if(turnRight)
-            playerScript.TurnRight();
+            _playerScript.TurnRight();
+        
+            //TODO check the functionality && functions only ________WHEN COLLIDED WITH WALLS________
+        else if (turnLeft && turnRight)
+            _playerScript.Reverse();
+        else
+        {
+            _playerScript.forwardForceEnable = true;  
+            foreach (var light in _playerScript.rearLights)
+            {
+                if (light.activeSelf)
+                    light.SetActive(false);
+            }
+        }
     }
-    public void OnPointerUp(PointerEventData eventData) => playerScript.PointerUp();
+    public void OnPointerUp(PointerEventData eventData) => _playerScript.PointerUp();
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    //TODO use cinamachion
+    
     private GameObject player;
     // private Vector3 offsetFromPlayer;
     // public float smoothFactor = 0.3f;

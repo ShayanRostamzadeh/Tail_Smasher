@@ -8,7 +8,7 @@ public class EnemyFollow : MonoBehaviour
 {
     private NavMeshAgent follower;
     private GameObject player;
-
+    
     private void Start()
     {
         follower = GetComponent<NavMeshAgent>();
@@ -20,6 +20,8 @@ public class EnemyFollow : MonoBehaviour
     private void FixedUpdate()
     {
         follower.SetDestination(player.transform.position);
+        //Vector3 playerDirection = transform.position - player.transform.position;
+        //transform.Translate(playerDirection);
     }
     
 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - FrontLight
+  - RearLight
   layers:
   - Default
   - TransparentFX

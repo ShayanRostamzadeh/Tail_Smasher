@@ -1,29 +1,51 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerController : MonoBehaviour
 {
-    public float forwardForce = 30f;
+    public float forwardForce = 3000f;
     public float rotationFactor = 50f;
-    private bool forwardForceEnable = true;
+    public bool forwardForceEnable = true;
     private float carTiltDelay = 0f;
     private bool turnRight = false;
     private bool turnLeft = false;
 
     [SerializeField] private GameObject carBody;
     [SerializeField] private Transform centerOfMass;
+    public GameObject[] frontLights;
+    public GameObject[] rearLights;
 
+    public Animator animator;
     private Rigidbody playerRigidbody;
     private ParticleSystem explosionEffect;
     private AudioSource explosionSound;
+    public GameController _gameController;
 
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         explosionEffect = GetComponent<ParticleSystem>();
         explosionSound = GetComponent<AudioSource>();
+        
+        // Animation section
+        //animator = gameObject.GetComponentInChildren<Animator>();
+        //if(animator.transform.gameObject.name == "Player_Car_01")
+
+        // todo: how to append one array to another????????
+        if (!_gameController.isNight)
+        {
+            frontLights = GameObject.FindGameObjectsWithTag("FrontLight");
+            rearLights = GameObject.FindGameObjectsWithTag("RearLight");
+            foreach (GameObject light in frontLights)
+                light.SetActive(false);
+            foreach (GameObject light in rearLights)
+                light.SetActive(false);
+        }
     }
     
     private void FixedUpdate()
@@ -35,10 +57,37 @@ public class PlayerController : MonoBehaviour
             ForceForward();
         // Checking if UI buttons are pressed to steer accordingly 
         Steer();
+        
+        // todo remove this section
+        #region ReverseGear
+        while (Input.GetKeyDown(KeyCode.Space))
+            Reverse();
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            forwardForceEnable = true;
+            foreach (var light in rearLights)
+            {
+                if (light.activeSelf)
+                    light.SetActive(false);
+            }
+        }
+        #endregion
     }
 
     public void TurnRight() => turnRight = true;
     public void TurnLeft() => turnLeft = true;
+    
+    public void Reverse()
+    {
+        Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
+        playerRigidbody.velocity = -movement;
+        forwardForceEnable = false;
+        foreach (var light in rearLights)
+        {
+            if (!light.activeSelf)
+                light.SetActive(true);
+        }
+    }//Reverse()
 
     public void PointerUp()
     {
@@ -80,7 +129,7 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 offset = (rb.position + playerRigidbody.position) / 2;
                 rb.AddExplosionForce(9000f, offset, 50f, 1000f, ForceMode.Impulse);
-                Destroy(gameObject, 2f);
+                Destroy(gameObject, 0.5f);
             }
         }
     }
@@ -91,28 +140,32 @@ public class PlayerController : MonoBehaviour
     private void ForceForward()
     {
         Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
-        playerRigidbody.MovePosition(playerRigidbody.position + movement);
+        playerRigidbody.velocity = movement;
     } //ForceForward()
 
     private void Steer()
     {
         if (turnLeft)
         {
-            carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
+            animator.SetBool("turnLeft", true);
+            // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
             playerRigidbody.MoveRotation(Quaternion.Euler(-Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
-            carTiltDelay += 0.1f;
+            // carTiltDelay += 0.1f;
         }
         else if (turnRight)
         {
-            carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, Vector3.forward * 8, carTiltDelay));
+            animator.SetBool("turnRight", true);
+            // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, Vector3.forward * 8, carTiltDelay));
             playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) *
                                          transform.rotation);
-            carTiltDelay += 0.1f;
+            // carTiltDelay += 0.1f;
         }
         else
         {
-            carBody.transform.localRotation = Quaternion.identity;
-            carTiltDelay = 0f;
+            animator.SetBool("turnLeft", false);
+            animator.SetBool("turnRight", false);
+            //carBody.transform.localRotation = Quaternion.identity;
+            //carTiltDelay -= 0.1f;
         }
     } //Steer()
 
