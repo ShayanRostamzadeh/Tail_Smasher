@@ -9,19 +9,19 @@ public class PausePlayButton : MonoBehaviour
 {
     //[HideInInspector] public bool isPressed = false;
     
-    private Button pausePlay;
+    public Button pausePlay;
     public Button resume;
     public Button menu;
 
     private void Start()
     {
-        pausePlay = GetComponent<Button>();
-        pausePlay.onClick.AddListener(OnPressed_PausePlay);
-        resume.onClick.AddListener(OnPressed_Resume);
-        menu.onClick.AddListener(OnPressed_Menu);
+        //pausePlay = GetComponent<Button>();
+        // pausePlay.onClick.AddListener(OnPressed_PausePlay);
+        // resume.onClick.AddListener(OnPressed_Resume);
+        // menu.onClick.AddListener(OnPressed_Menu);
     }
 
-    private void OnPressed_PausePlay()
+    public void OnPressed_PausePlay()
     {
         //isPressed = !isPressed;
         Time.timeScale = 0f;
@@ -29,7 +29,7 @@ public class PausePlayButton : MonoBehaviour
         menu.gameObject.SetActive(true);
     }
 
-    private void OnPressed_Resume()
+    public void OnPressed_Resume()
     {
         //isPressed = !isPressed;
         Time.timeScale = 1f;
@@ -37,7 +37,7 @@ public class PausePlayButton : MonoBehaviour
         menu.gameObject.SetActive(false);
     }
 
-    private void OnPressed_Menu()
+    public void OnPressed_Menu()
     {
         SceneManager.LoadScene("Enterance");
     }

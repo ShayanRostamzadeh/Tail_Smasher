@@ -2,39 +2,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float forwardForce = 3000f;
     public float rotationFactor = 50f;
     public bool forwardForceEnable = true;
-    private float carTiltDelay = 0f;
+    //private float carTiltDelay = 0f;
     private bool turnRight = false;
     private bool turnLeft = false;
-
-    [SerializeField] private GameObject carBody;
+    
     [SerializeField] private Transform centerOfMass;
-    public GameObject[] frontLights;
-    public GameObject[] rearLights;
-
+    [HideInInspector] public GameObject[] frontLights;
+    [HideInInspector] public GameObject[] rearLights;
+    
     public Animator animator;
     private Rigidbody playerRigidbody;
-    private ParticleSystem explosionEffect;
-    private AudioSource explosionSound;
+    public GameObject carBodyFractured;
     public GameController _gameController;
 
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        explosionEffect = GetComponent<ParticleSystem>();
-        explosionSound = GetComponent<AudioSource>();
-        
-        // Animation section
-        //animator = gameObject.GetComponentInChildren<Animator>();
-        //if(animator.transform.gameObject.name == "Player_Car_01")
 
         // todo: how to append one array to another????????
         if (!_gameController.isNight)
@@ -52,17 +45,93 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidbody.centerOfMass = centerOfMass.localPosition;
 
+        #region Movement
+        
         // The player continuously goes forward without the control of user 
         if(forwardForceEnable)
             ForceForward();
+        
         // Checking if UI buttons are pressed to steer accordingly 
         Steer();
+        Reverse();
         
-        // todo remove this section
-        #region ReverseGear
-        while (Input.GetKeyDown(KeyCode.Space))
-            Reverse();
-        if (Input.GetKeyUp(KeyCode.Space))
+        #endregion
+    }
+
+    #region Button Controller
+    public void TurnRight() => turnRight = true;
+    public void TurnLeft() => turnLeft = true;
+    
+    public void ButtonPointerUp()
+    {
+        turnRight = false;
+        turnLeft = false;
+    }//ButtonPointerUp
+    #endregion
+    
+    
+    #region Impact
+    
+    // private void OnTriggerEnter(Collider target)
+    // {
+    //     if (target.gameObject.CompareTag("Enemy"))
+    //     {
+    //         DeathSequence();
+    //     }
+    // }
+
+    private void OnCollisionEnter(Collision target)
+    {
+        if (target.gameObject.CompareTag("Enemy"))
+        {
+            DeathSequence();
+        }
+    }
+
+    private void DeathSequence()
+    {
+        forwardForceEnable = false;
+
+        // todo change to destructible object
+        Instantiate(carBodyFractured, transform.position, Quaternion.identity);
+        carBodyFractured.GetComponent<Rigidbody>().AddExplosionForce(10000f, transform.position, 100f);
+        Destroy(gameObject);
+        
+        //Collider[] colliders = Physics.OverlapSphere(transform.position, 10f);
+        // foreach (Collider hit in colliders)
+        // {
+        //     Rigidbody rb = hit.GetComponent<Rigidbody>();
+        //     if (rb != null)
+        //     {
+        //         Vector3 offset = (rb.position + playerRigidbody.position) / 2;
+        //         rb.AddExplosionForce(100000f, offset, 100f);
+        //         Destroy(gameObject, 1f);
+        //     }
+        // }
+    }
+    #endregion
+    
+    #region Movement
+    private void ForceForward()
+    {
+        Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
+        playerRigidbody.velocity = movement;
+    } //ForceForward()
+    
+    public void Reverse()
+    {
+        if (turnLeft && turnRight)
+        {
+            Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
+            playerRigidbody.velocity = -movement;
+            forwardForceEnable = false;
+            foreach (var light in rearLights)
+            {
+                if (!light.activeSelf)
+                    light.SetActive(true);
+            }
+        }
+        else
         {
             forwardForceEnable = true;
             foreach (var light in rearLights)
@@ -71,93 +140,25 @@ public class PlayerController : MonoBehaviour
                     light.SetActive(false);
             }
         }
-        #endregion
-    }
 
-    public void TurnRight() => turnRight = true;
-    public void TurnLeft() => turnLeft = true;
-    
-    public void Reverse()
-    {
-        Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
-        playerRigidbody.velocity = -movement;
-        forwardForceEnable = false;
-        foreach (var light in rearLights)
-        {
-            if (!light.activeSelf)
-                light.SetActive(true);
-        }
     }//Reverse()
-
-    public void PointerUp()
-    {
-        turnRight = false;
-        turnLeft = false;
-    }
-    
-    #region Explosion
-    
-    private void OnTriggerEnter(Collider target)
-    {
-        if (target.gameObject.CompareTag("Enemy"))
-        {
-            explosionEffect.Play();
-            explosionSound.Play();
-            DeathSequence();
-        }
-    }
-
-    // private void OnCollisionEnter(Collision target)
-    // {
-    //     if (target.gameObject.CompareTag("Enemy"))
-    //     {
-    //         explosionEffect.Play();
-    //         explosionSound.Play();
-    //         DeathSequence();
-    //     }
-    // }
-
-    private void DeathSequence()
-    {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 10f);
-        Destroy(transform.Find("Chains").gameObject);
-        forwardForceEnable = false;
-        foreach (Collider hit in colliders)
-        {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                Vector3 offset = (rb.position + playerRigidbody.position) / 2;
-                rb.AddExplosionForce(9000f, offset, 50f, 1000f, ForceMode.Impulse);
-                Destroy(gameObject, 0.5f);
-            }
-        }
-    }
-    #endregion
-    
-    #region Movement
-
-    private void ForceForward()
-    {
-        Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
-        playerRigidbody.velocity = movement;
-    } //ForceForward()
 
     private void Steer()
     {
         if (turnLeft)
         {
             animator.SetBool("turnLeft", true);
-            // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
             playerRigidbody.MoveRotation(Quaternion.Euler(-Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
+            
+            // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
             // carTiltDelay += 0.1f;
         }
         else if (turnRight)
         {
             animator.SetBool("turnRight", true);
+            playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
+            
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, Vector3.forward * 8, carTiltDelay));
-            playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) *
-                                         transform.rotation);
             // carTiltDelay += 0.1f;
         }
         else

@@ -321,6 +321,7 @@
 -r:"/Applications/Unity/Hub/Editor/2021.2.7f1/Unity.app/Contents/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.2.7f1/Unity.app/Contents/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.RenderPipelines.Core.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.RenderPipelines.Core.Runtime.ref.dll"
@@ -339,6 +340,7 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/BullShit/UiButtonPlayerProber.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyFollow.cs"
 "Assets/Scripts/EnteranceScene.cs"
@@ -347,7 +349,6 @@
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/TailSmasher.cs"
 "Assets/Scripts/Timer.cs"
-"Assets/Scripts/UiButtonPlayerProber.cs"
 -langversion:9.0
 
 /deterministic

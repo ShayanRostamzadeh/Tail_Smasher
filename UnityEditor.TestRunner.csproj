@@ -138,8 +138,8 @@
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/TestRunner/Utils/ITestListCacheData.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/UnityTestProtocol/UtpDebuglogger.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/TestRunner/EditModePCHelper.cs" />
-     <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/TestRunner/Callbacks/WindowResultUpdater.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/Api/ExecutionSettings.cs" />
+     <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/TestRunner/Callbacks/WindowResultUpdater.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/TestLaunchers/PlaymodeLauncher.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/GUI/Views/EditModeTestListGUI.cs" />
      <Compile Include="Library/PackageCache/com.unity.test-framework@1.1.30/UnityEditor.TestRunner/UnityTestProtocol/TestPlanMessage.cs" />

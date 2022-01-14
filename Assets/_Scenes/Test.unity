@@ -134,58 +134,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2345253605223340009, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
         type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1803673427}
-    - target: {fileID: 2345253605223340009, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
       propertyPath: _gameController
       value: 
       objectReference: {fileID: 2045132594}
-    - target: {fileID: 4143204959366064173, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_TagString
-      value: RearLight
-      objectReference: {fileID: 0}
-    - target: {fileID: 5908239940176833954, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_TagString
-      value: RearLight
-      objectReference: {fileID: 0}
     - target: {fileID: 6029737898646294226, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
         type: 3}
       propertyPath: m_Name
       value: Player Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352645084554810282, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352645084554810282, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352645084554810282, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352645084554810282, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352645084554810282, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352645084554810282, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7347261554939870401, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
         type: 3}
@@ -244,37 +199,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c, type: 3}
---- !u!1 &519972282
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 519972283}
-  m_Layer: 0
-  m_Name: VFX Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &519972283
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519972282}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2045132593}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641366834
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +212,6 @@ GameObject:
   - component: {fileID: 641366837}
   - component: {fileID: 641366836}
   - component: {fileID: 641366839}
-  - component: {fileID: 641366840}
   m_Layer: 5
   m_Name: Turn_Right_Button
   m_TagString: Untagged
@@ -416,8 +339,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
+        - m_Target: {fileID: 1785830926}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
           m_MethodName: TurnRight
           m_Mode: 1
           m_Arguments:
@@ -432,9 +355,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: PointerUp
+        - m_Target: {fileID: 1785830926}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: ButtonPointerUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -444,20 +367,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &641366840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641366834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b671fa7ad108f840b0e3d13031eddbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnRight: 1
-  turnLeft: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +557,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3116817454829607937, guid: ad9858dd8e8f7f6469d9886188967035,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3116817454829607938, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_Speed
@@ -746,6 +660,11 @@ PrefabInstance:
     - target: {fileID: 2097113022220594710, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116817454829607937, guid: ad9858dd8e8f7f6469d9886188967035,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3116817454829607938, guid: ad9858dd8e8f7f6469d9886188967035,
@@ -878,7 +797,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 888416323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086633393}
+        m_TargetAssemblyTypeName: PausePlayButton, Assembly-CSharp
+        m_MethodName: OnPressed_Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &888416323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1120,134 +1051,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1228442866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!114 &1086633393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8626349390219434386, guid: 1ea18d40948a04987993c0dbc5bec336,
+    type: 3}
+  m_PrefabInstance: {fileID: 8626349389149596707}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1228442868}
-  - component: {fileID: 1228442867}
-  m_Layer: 0
-  m_Name: SFX & Music Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1228442867
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228442866}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7e038e4c7cf83a14c8e062e6578a2f64, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1228442868
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228442866}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2045132593}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4c193f7f16d9946a79003eabfde865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1554512203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1145,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1554512206}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086633393}
+        m_TargetAssemblyTypeName: PausePlayButton, Assembly-CSharp
+        m_MethodName: OnPressed_Menu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1554512206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,7 +1209,6 @@ GameObject:
   - component: {fileID: 1716436425}
   - component: {fileID: 1716436424}
   - component: {fileID: 1716436427}
-  - component: {fileID: 1716436428}
   m_Layer: 5
   m_Name: Turn_Left_Button
   m_TagString: Untagged
@@ -1510,13 +1336,13 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
+        - m_Target: {fileID: 1785830926}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: TurnLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1526,58 +1352,30 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
+        - m_Target: {fileID: 1785830926}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: ButtonPointerUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1716436428
+--- !u!114 &1785830926 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1716436422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b671fa7ad108f840b0e3d13031eddbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnRight: 0
-  turnLeft: 1
---- !u!1 &1803673423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4477124339597284872, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
+  m_CorrespondingSourceObject: {fileID: 2345253605223340009, guid: 0a4bcd7ed4aa4b54187aadc05250ed5c,
     type: 3}
   m_PrefabInstance: {fileID: 351815101}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1803673427
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803673423}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce28105b3a48f4cf39c9e417d9ae480a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01960c3ee9e7c8646b1f3ab5ca8dfd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1895380492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,6 +1516,11 @@ PrefabInstance:
     - target: {fileID: 2097113022220594710, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116817454829607937, guid: ad9858dd8e8f7f6469d9886188967035,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3116817454829607938, guid: ad9858dd8e8f7f6469d9886188967035,
@@ -1941,7 +1744,6 @@ GameObject:
   - component: {fileID: 2008415504}
   - component: {fileID: 2008415503}
   - component: {fileID: 2008415502}
-  - component: {fileID: 2008415505}
   m_Layer: 5
   m_Name: PausePlay_Button
   m_TagString: Untagged
@@ -2012,7 +1814,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2008415503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086633393}
+        m_TargetAssemblyTypeName: PausePlayButton, Assembly-CSharp
+        m_MethodName: OnPressed_PausePlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2008415503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,67 +1865,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008415500}
   m_CullTransparentMesh: 0
---- !u!114 &2008415505
+--- !u!114 &2045132594 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8626349389831295761, guid: 1ea18d40948a04987993c0dbc5bec336,
+    type: 3}
+  m_PrefabInstance: {fileID: 8626349389149596707}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008415500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4c193f7f16d9946a79003eabfde865, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resume: {fileID: 888416322}
-  menu: {fileID: 1554512205}
---- !u!1 &2045132592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2045132593}
-  - component: {fileID: 2045132594}
-  m_Layer: 0
-  m_Name: Game Controller
-  m_TagString: GameController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2045132593
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045132592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1228442868}
-  - {fileID: 519972283}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2045132594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045132592}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5892fe903798447e394ec7e142189910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNight: 0
 --- !u!1 &2100479886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,3 +2092,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca80fcc8df32b5f45a27c5817e0e02ad, type: 3}
+--- !u!1001 &8626349389149596707
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295762, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349389831295763, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: m_Name
+      value: Game_Controller_Scene1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626349390219434386, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 1554512205}
+    - target: {fileID: 8626349390219434386, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: resume
+      value: 
+      objectReference: {fileID: 888416322}
+    - target: {fileID: 8626349390219434386, guid: 1ea18d40948a04987993c0dbc5bec336,
+        type: 3}
+      propertyPath: pausePlay
+      value: 
+      objectReference: {fileID: 2008415502}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ea18d40948a04987993c0dbc5bec336, type: 3}
