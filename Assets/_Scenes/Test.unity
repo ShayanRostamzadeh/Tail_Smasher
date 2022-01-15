@@ -557,40 +557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3116817454829607937, guid: ad9858dd8e8f7f6469d9886188967035,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116817454829607938, guid: ad9858dd8e8f7f6469d9886188967035,
-        type: 3}
-      propertyPath: m_Speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116817454829607938, guid: ad9858dd8e8f7f6469d9886188967035,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116817454829607938, guid: ad9858dd8e8f7f6469d9886188967035,
-        type: 3}
-      propertyPath: m_AngularSpeed
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116817454829607938, guid: ad9858dd8e8f7f6469d9886188967035,
-        type: 3}
-      propertyPath: m_WalkableMask
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3116817454829607941, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_Name
       value: RageCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 3116817454829607941, guid: ad9858dd8e8f7f6469d9886188967035,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9858dd8e8f7f6469d9886188967035, type: 3}
@@ -662,6 +632,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3116817454829607936, guid: ad9858dd8e8f7f6469d9886188967035,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3116817454829607937, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_IsTrigger
@@ -705,7 +680,7 @@ PrefabInstance:
     - target: {fileID: 3116817454829607941, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9858dd8e8f7f6469d9886188967035, type: 3}
@@ -1518,6 +1493,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3116817454829607936, guid: ad9858dd8e8f7f6469d9886188967035,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3116817454829607937, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1561,7 +1541,7 @@ PrefabInstance:
     - target: {fileID: 3116817454829607941, guid: ad9858dd8e8f7f6469d9886188967035,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9858dd8e8f7f6469d9886188967035, type: 3}

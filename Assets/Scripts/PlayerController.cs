@@ -24,10 +24,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRigidbody;
     public GameObject carBodyFractured;
     public GameController _gameController;
-
+    
+    private AudioSource audioSource;
+    public AudioClip carDriftSoundClip;
+    
     private void Start()
     {
+        // Physics
         playerRigidbody = GetComponent<Rigidbody>();
+        
+        // Audio 
+        audioSource = GetComponent<AudioSource>();
+
 
         // todo: how to append one array to another????????
         if (!_gameController.isNight)
@@ -57,6 +65,7 @@ public class PlayerController : MonoBehaviour
         
         #endregion
     }
+    
 
     #region Button Controller
     public void TurnRight() => turnRight = true;
@@ -91,23 +100,9 @@ public class PlayerController : MonoBehaviour
     private void DeathSequence()
     {
         forwardForceEnable = false;
-
-        // todo change to destructible object
         Instantiate(carBodyFractured, transform.position, Quaternion.identity);
         carBodyFractured.GetComponent<Rigidbody>().AddExplosionForce(10000f, transform.position, 100f);
         Destroy(gameObject);
-        
-        //Collider[] colliders = Physics.OverlapSphere(transform.position, 10f);
-        // foreach (Collider hit in colliders)
-        // {
-        //     Rigidbody rb = hit.GetComponent<Rigidbody>();
-        //     if (rb != null)
-        //     {
-        //         Vector3 offset = (rb.position + playerRigidbody.position) / 2;
-        //         rb.AddExplosionForce(100000f, offset, 100f);
-        //         Destroy(gameObject, 1f);
-        //     }
-        // }
     }
     #endregion
     
@@ -122,9 +117,9 @@ public class PlayerController : MonoBehaviour
     {
         if (turnLeft && turnRight)
         {
+            forwardForceEnable = false;
             Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
             playerRigidbody.velocity = -movement;
-            forwardForceEnable = false;
             foreach (var light in rearLights)
             {
                 if (!light.activeSelf)
@@ -149,7 +144,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("turnLeft", true);
             playerRigidbody.MoveRotation(Quaternion.Euler(-Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
-            
+            audioSource.PlayOneShot(carDriftSoundClip);
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
             // carTiltDelay += 0.1f;
         }
@@ -157,7 +152,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("turnRight", true);
             playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
-            
+            audioSource.PlayOneShot(carDriftSoundClip);
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, Vector3.forward * 8, carTiltDelay));
             // carTiltDelay += 0.1f;
         }

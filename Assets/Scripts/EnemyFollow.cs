@@ -8,6 +8,7 @@ public class EnemyFollow : MonoBehaviour
 {
     private NavMeshAgent follower;
     private GameObject player;
+    public bool isAlive = true;
     
     private void Start()
     {
@@ -15,13 +16,16 @@ public class EnemyFollow : MonoBehaviour
         // Accessing player's gameObject within the scene
         player = GameObject.FindWithTag("Player");
     }
-    
+
 
     private void FixedUpdate()
     {
-        follower.SetDestination(player.transform.position);
-        //Vector3 playerDirection = transform.position - player.transform.position;
-        //transform.Translate(playerDirection);
+        if (isAlive)
+        {
+            follower.SetDestination(player.transform.position);
+            //Vector3 playerDirection = transform.position - player.transform.position;
+            //transform.Translate(playerDirection);        }
+        }
     }
-    
+
 }

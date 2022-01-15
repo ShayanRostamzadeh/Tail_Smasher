@@ -9,7 +9,6 @@ ScriptsOnlyBuild:
     - PlayerController
     - TailSmasher
     - Timer
-    - UiButtonPlayerProber
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
     - UnityEngine.Rendering.UI.DebugUIHandlerButton
@@ -48,10 +47,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -105,83 +102,83 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 1568}
+      Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 1706}
+      Script: {instanceID: 1704}
     - Class: 114
-      Script: {instanceID: 2164}
+      Script: {instanceID: 2172}
     - Class: 114
-      Script: {instanceID: 2244}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2328}
+      Script: {instanceID: 2338}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 2548}
     - Class: 114
-      Script: {instanceID: 3002}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3124}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 3158}
     - Class: 114
-      Script: {instanceID: 3180}
+      Script: {instanceID: 3196}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 3328}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 3710}
+      Script: {instanceID: 3730}
     - Class: 114
-      Script: {instanceID: 3814}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 4120}
+      Script: {instanceID: 4142}
     - Class: 114
-      Script: {instanceID: 4160}
+      Script: {instanceID: 4182}
     - Class: 114
-      Script: {instanceID: 4860}
+      Script: {instanceID: 4894}
     - Class: 114
-      Script: {instanceID: 4878}
+      Script: {instanceID: 4912}
     - Class: 114
-      Script: {instanceID: 4938}
+      Script: {instanceID: 4972}
     - Class: 114
-      Script: {instanceID: 5144}
+      Script: {instanceID: 5180}
     - Class: 114
-      Script: {instanceID: 5146}
+      Script: {instanceID: 5182}
     - Class: 114
-      Script: {instanceID: 5166}
+      Script: {instanceID: 5202}
     - Class: 114
-      Script: {instanceID: 5380}
+      Script: {instanceID: 5416}
     - Class: 114
-      Script: {instanceID: 5488}
+      Script: {instanceID: 5526}
     - Class: 114
-      Script: {instanceID: 5600}
+      Script: {instanceID: 5642}
     - Class: 114
-      Script: {instanceID: 5670}
+      Script: {instanceID: 5718}
     - Class: 114
-      Script: {instanceID: 5678}
+      Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 5780}
+      Script: {instanceID: 5830}
     - Class: 114
-      Script: {instanceID: 5814}
+      Script: {instanceID: 5864}
     - Class: 114
-      Script: {instanceID: 5850}
+      Script: {instanceID: 5900}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 5968}
     - Class: 114
-      Script: {instanceID: 5928}
+      Script: {instanceID: 5980}
     - Class: 114
-      Script: {instanceID: 6024}
+      Script: {instanceID: 6078}
     - Class: 114
-      Script: {instanceID: 6138}
+      Script: {instanceID: 6192}
     - Class: 114
-      Script: {instanceID: 6244}
+      Script: {instanceID: 6300}
     - Class: 114
-      Script: {instanceID: 6564}
+      Script: {instanceID: 6620}
     - Class: 114
-      Script: {instanceID: 6868}
+      Script: {instanceID: 6926}
     - Class: 114
-      Script: {instanceID: 7168}
+      Script: {instanceID: 7228}
     - Class: 114
-      Script: {instanceID: 7400}
+      Script: {instanceID: 7466}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -252,31 +249,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1562}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 2548}
     - Class: 114
-      Script: {instanceID: 3002}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3028}
+      Script: {instanceID: 3042}
     - Class: 114
-      Script: {instanceID: 3030}
+      Script: {instanceID: 3044}
     - Class: 114
-      Script: {instanceID: 5016}
+      Script: {instanceID: 5526}
     - Class: 114
-      Script: {instanceID: 5488}
+      Script: {instanceID: 5968}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 6158}
     - Class: 114
-      Script: {instanceID: 6104}
+      Script: {instanceID: 6358}
     - Class: 114
-      Script: {instanceID: 6302}
+      Script: {instanceID: 6546}
     - Class: 114
-      Script: {instanceID: 6490}
+      Script: {instanceID: 6620}
     - Class: 114
-      Script: {instanceID: 6564}
+      Script: {instanceID: 7250}
     - Class: 114
-      Script: {instanceID: 7190}
-    - Class: 114
-      Script: {instanceID: 7468}
+      Script: {instanceID: 7534}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -728,7 +723,7 @@ ScriptsOnlyBuild:
     className: VFXTransformBinder
   - hash:
       serializedVersion: 2
-      Hash: 66ef18dab9e273966a8a4d964216c1a2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnteranceScene
@@ -1010,7 +1005,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 7ce36ca44ec0498c1f4d6cfa6838ba27
+      Hash: d4c09764f6b4e78be2f8d7ab22556b43
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PausePlayButton
@@ -1058,7 +1053,7 @@ ScriptsOnlyBuild:
     className: ProbeVolume
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 9f6997a28de38f1a651253dc2f5d75eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyFollow
@@ -1178,7 +1173,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerButton
   - hash:
       serializedVersion: 2
-      Hash: 93b5415c318635f9b9cd3c271178d590
+      Hash: d0c4d6ed11b761b3db0adad8062afb72
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1214,7 +1209,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerFoldout
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 60ce09658c4a8a0282804d7ecd93091f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TailSmasher

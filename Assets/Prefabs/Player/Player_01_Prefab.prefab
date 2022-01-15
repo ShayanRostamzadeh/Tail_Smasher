@@ -5056,6 +5056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36970c69b6af9fe4b80ad960c254121c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactParticle: {fileID: 5284082524984190138, guid: 9e6e1a6cfefe1443a9c5ea2eba626df9,
+    type: 3}
+  hitForce: 10
 --- !u!82 &6488951737612031354
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5066,7 +5069,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0ff57f55c1de2e64aabd7a5e40fe16f7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 57bf82b7090f241b9af0354f8e6ce7a9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5519,6 +5522,7 @@ GameObject:
   - component: {fileID: 2345253605223339984}
   - component: {fileID: 491821302}
   - component: {fileID: 2345253605223340009}
+  - component: {fileID: 1795640991}
   m_Layer: 0
   m_Name: Player_01_Prefab
   m_TagString: Player
@@ -5591,7 +5595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardForce: 1000
-  rotationFactor: 80
+  rotationFactor: 100
   forwardForceEnable: 1
   centerOfMass: {fileID: 2345253604854959623}
   frontLights: []
@@ -5600,6 +5604,103 @@ MonoBehaviour:
   carBodyFractured: {fileID: 5858313983234422474, guid: 557775e14209842a888ab59938ff6284,
     type: 3}
   _gameController: {fileID: 0}
+  carDriftSoundClip: {fileID: 8300000, guid: bf1755413e47d4eeab94ff260d1c5782, type: 3}
+--- !u!82 &1795640991
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029737898646294226}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c22337f44e0d7496fa2799de0abf1643, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.35
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.9
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6308171967349099233
 GameObject:
   m_ObjectHideFlags: 0

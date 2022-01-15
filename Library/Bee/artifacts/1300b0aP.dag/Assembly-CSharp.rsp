@@ -300,6 +300,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.VisualEffectGraph.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/UnityEngine.UI.ref.dll"
+"Assets/BullShit/UiButtonPlayerProber.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyFollow.cs"
 "Assets/Scripts/EnteranceScene.cs"
@@ -308,7 +309,6 @@
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/TailSmasher.cs"
 "Assets/Scripts/Timer.cs"
-"Assets/Scripts/UiButtonPlayerProber.cs"
 -langversion:9.0
 
 /deterministic
