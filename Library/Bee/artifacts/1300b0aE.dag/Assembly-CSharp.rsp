@@ -345,6 +345,7 @@
 "Assets/Scripts/EnemyFollow.cs"
 "Assets/Scripts/EnteranceScene.cs"
 "Assets/Scripts/GameController.cs"
+"Assets/Scripts/HealthBarController.cs"
 "Assets/Scripts/PausePlayButton.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/TailSmasher.cs"

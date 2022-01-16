@@ -150,4 +150,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264de8979c5689c48a0392464221c418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: hitter
   isAlive: 1

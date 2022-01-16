@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
+    public String enemyName; 
     private NavMeshAgent follower;
     private GameObject player;
     public bool isAlive = true;

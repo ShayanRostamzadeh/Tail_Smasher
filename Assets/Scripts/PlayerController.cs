@@ -11,15 +11,16 @@ public class PlayerController : MonoBehaviour
 {
     public float forwardForce = 3000f;
     public float rotationFactor = 50f;
+    [HideInInspector] public float playerHealth = 100f;
+    
     public bool forwardForceEnable = true;
-    //private float carTiltDelay = 0f;
     private bool turnRight = false;
     private bool turnLeft = false;
+    //private float carTiltDelay = 0f;
     
     [SerializeField] private Transform centerOfMass;
     [HideInInspector] public GameObject[] frontLights;
     [HideInInspector] public GameObject[] rearLights;
-    
     public Animator animator;
     private Rigidbody playerRigidbody;
     public GameObject carBodyFractured;
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
     
     private AudioSource audioSource;
     public AudioClip carDriftSoundClip;
-    
+
     private void Start()
     {
         // Physics
@@ -93,7 +94,31 @@ public class PlayerController : MonoBehaviour
     {
         if (target.gameObject.CompareTag("Enemy"))
         {
-            DeathSequence();
+            GetDamage(target.gameObject);
+            if (playerHealth <= 0f) 
+            {
+                DeathSequence();
+            }
+        }
+    }
+    
+    private void GetDamage(GameObject enemy)
+    {
+        string name = enemy.gameObject.GetComponent<EnemyFollow>().enemyName;
+        Debug.Log(name);
+        switch (name)
+        {
+            case "hitter":
+                playerHealth -= 30f;
+                break;
+            case "Shooter":
+                playerHealth -= 15f;
+                break;
+            case "exploder":
+                playerHealth -= 70f;
+                break;
+            default:
+                break;
         }
     }
 
@@ -126,6 +151,17 @@ public class PlayerController : MonoBehaviour
                     light.SetActive(true);
             }
         }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            forwardForceEnable = false;
+            Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
+            playerRigidbody.velocity = -movement;
+            foreach (var light in rearLights)
+            {
+                if (!light.activeSelf)
+                    light.SetActive(true);
+            }
+        }
         else
         {
             forwardForceEnable = true;
@@ -140,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
     private void Steer()
     {
-        if (turnLeft)
+        if (turnLeft && forwardForceEnable)
         {
             animator.SetBool("turnLeft", true);
             playerRigidbody.MoveRotation(Quaternion.Euler(-Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
@@ -148,7 +184,7 @@ public class PlayerController : MonoBehaviour
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
             // carTiltDelay += 0.1f;
         }
-        else if (turnRight)
+        else if (turnRight && forwardForceEnable)
         {
             animator.SetBool("turnRight", true);
             playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
