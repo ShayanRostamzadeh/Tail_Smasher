@@ -80,3 +80,12 @@ The following packages were updated:
   com.unity.collab-proxy from version 1.15.1 to 1.15.4
   com.unity.ide.visualstudio from version 2.0.11 to 2.0.12
   com.unity.timeline from version 1.6.2 to 1.6.3
+
+=== Wed Jan 19 12:14:20 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.15.4 to 1.15.7
+  com.unity.visualeffectgraph from version 12.1.2 to 12.1.3

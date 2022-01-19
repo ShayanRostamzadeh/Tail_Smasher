@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
+﻿using UnityEngine;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool forwardForceEnable = true;
     private bool turnRight = false;
     private bool turnLeft = false;
+
     //private float carTiltDelay = 0f;
     
     [SerializeField] private Transform centerOfMass;
@@ -66,7 +61,6 @@ public class PlayerController : MonoBehaviour
         
         #endregion
     }
-    
 
     #region Button Controller
     public void TurnRight() => turnRight = true;
@@ -105,7 +99,6 @@ public class PlayerController : MonoBehaviour
     private void GetDamage(GameObject enemy)
     {
         string name = enemy.gameObject.GetComponent<EnemyFollow>().enemyName;
-        Debug.Log(name);
         switch (name)
         {
             case "hitter":

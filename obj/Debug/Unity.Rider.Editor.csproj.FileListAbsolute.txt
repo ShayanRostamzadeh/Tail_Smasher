@@ -219,10 +219,6 @@
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Configuration.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.EnterpriseServices.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Transactions.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Drawing.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.IO.Compression.FileSystem.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.ComponentModel.Composition.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Web.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Newtonsoft.Json.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/UnityEditor.TestRunner.pdb
@@ -405,3 +401,4 @@
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/obj/Debug/Unity.Rider.Editor.csproj.CopyComplete
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/obj/Debug/Unity.Rider.Editor.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/obj/Debug/Unity.Rider.Editor.pdb
+/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Mono.Security.dll

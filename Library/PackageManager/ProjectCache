@@ -5,22 +5,22 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637775696820000000
-    m_Hash: 2578504628
+      ticks: 637781786600000000
+    m_Hash: 72707732
   m_LockFileStatus:
     m_FilePath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637775696820000000
-    m_Hash: 972194823
+      ticks: 637781786620000000
+    m_Hash: 2154437068
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Packages
-m_EditorVersion: 2021.2.7f1 (6bd9e232123f)
+m_EditorVersion: 2021.2.8f1 (d0e5f0a7b06a)
 m_ResolvedPackages:
 - packageId: com.unity.2d.sprite@1.0.0
   testable: 0
@@ -73,12 +73,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.collab-proxy@1.15.4
+- packageId: com.unity.collab-proxy@1.15.7
   testable: 0
   isDirectDependency: 1
-  version: 1.15.4
+  version: 1.15.7
   source: 1
-  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.collab-proxy@1.15.4
+  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.collab-proxy@1.15.7
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -140,7 +140,6 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
-    - 1.15.4
     - 1.15.7
     - 2.0.0-preview.6
     - 2.0.0-preview.8
@@ -188,16 +187,16 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637726568460000000
+  datePublishedTicks: 637744672890000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 1275603954ad33bee601fe2c9a3c787b3d4e4c6b
+    revision: d208594e5483cdf10d303b6ee17df4d6bf58d3de
     path: 
   unityLifecycle:
-    version: 1.15.4
+    version: 1.15.7
     nextVersion: 
 - packageId: com.unity.ide.rider@3.0.9
   testable: 0
@@ -248,7 +247,6 @@ m_ResolvedPackages:
     - 3.0.7
     - 3.0.9
     compatible:
-    - 3.0.7
     - 3.0.9
     verified: 3.0.9
   dependencies:
@@ -276,7 +274,7 @@ m_ResolvedPackages:
     revision: bbc029723f4d157f759dba0f2d438dfcec2e73eb
     path: 
   unityLifecycle:
-    version: 3.0.7
+    version: 3.0.9
     nextVersion: 
 - packageId: com.unity.ide.visualstudio@2.0.12
   testable: 0
@@ -866,12 +864,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.visualeffectgraph@12.1.2
+- packageId: com.unity.visualeffectgraph@12.1.3
   testable: 0
   isDirectDependency: 1
-  version: 12.1.2
+  version: 12.1.3
   source: 2
-  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.visualeffectgraph@12.1.2
+  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.visualeffectgraph@12.1.3
   assetPath: Packages/com.unity.visualeffectgraph
   name: com.unity.visualeffectgraph
   displayName: Visual Effect Graph
@@ -953,20 +951,20 @@ m_ResolvedPackages:
     - 10.7.0
     - 10.8.0
     - 10.8.1
-    - 12.1.2
+    - 12.1.3
     compatible:
-    - 12.1.2
-    verified: 12.1.2
+    - 12.1.3
+    verified: 12.1.3
   dependencies:
   - name: com.unity.shadergraph
-    version: 12.1.2
+    version: 12.1.3
   - name: com.unity.render-pipelines.core
-    version: 12.1.2
+    version: 12.1.3
   resolvedDependencies:
   - name: com.unity.shadergraph
-    version: 12.1.2
+    version: 12.1.3
   - name: com.unity.render-pipelines.core
-    version: 12.1.2
+    version: 12.1.3
   - name: com.unity.ugui
     version: 1.0.0
   - name: com.unity.modules.ui
@@ -1003,7 +1001,7 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 12.1.2
+    version: 12.1.3
     nextVersion: 
 - packageId: com.unity.modules.ai@1.0.0
   testable: 0
@@ -2745,12 +2743,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
-- packageId: com.unity.shadergraph@12.1.2
+- packageId: com.unity.shadergraph@12.1.3
   testable: 0
   isDirectDependency: 0
-  version: 12.1.2
+  version: 12.1.3
   source: 2
-  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.shadergraph@12.1.2
+  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.shadergraph@12.1.3
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -2863,18 +2861,18 @@ m_ResolvedPackages:
     - 10.7.0
     - 10.8.0
     - 10.8.1
-    - 12.1.2
+    - 12.1.3
     compatible:
-    - 12.1.2
-    verified: 12.1.2
+    - 12.1.3
+    verified: 12.1.3
   dependencies:
   - name: com.unity.render-pipelines.core
-    version: 12.1.2
+    version: 12.1.3
   - name: com.unity.searcher
     version: 4.9.1
   resolvedDependencies:
   - name: com.unity.render-pipelines.core
-    version: 12.1.2
+    version: 12.1.3
   - name: com.unity.ugui
     version: 1.0.0
   - name: com.unity.modules.ui
@@ -2906,14 +2904,14 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 12.1.2
+    version: 12.1.3
     nextVersion: 
-- packageId: com.unity.render-pipelines.core@12.1.2
+- packageId: com.unity.render-pipelines.core@12.1.3
   testable: 0
   isDirectDependency: 0
-  version: 12.1.2
+  version: 12.1.3
   source: 2
-  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.render-pipelines.core@12.1.2
+  resolvedPath: /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/PackageCache/com.unity.render-pipelines.core@12.1.3
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Core RP Library
@@ -3029,10 +3027,10 @@ m_ResolvedPackages:
     - 10.7.0
     - 10.8.0
     - 10.8.1
-    - 12.1.2
+    - 12.1.3
     compatible:
-    - 12.1.2
-    verified: 12.1.2
+    - 12.1.3
+    verified: 12.1.3
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -3070,7 +3068,7 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 12.1.2
+    version: 12.1.3
     nextVersion: 
 - packageId: com.unity.ext.nunit@1.0.6
   testable: 0

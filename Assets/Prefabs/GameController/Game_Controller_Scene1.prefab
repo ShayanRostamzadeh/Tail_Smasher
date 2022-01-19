@@ -78,6 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5892fe903798447e394ec7e142189910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backGroundMusic:
+  - {fileID: 8300000, guid: 5d39d8fa374b9449b9c8ed643bb60cfe, type: 3}
+  - {fileID: 8300000, guid: 5bb34bc02100748b6b8a31b5438c94e4, type: 3}
+  - {fileID: 8300000, guid: 39556c95746f04b2f9c4ee5af8555676, type: 3}
+  - {fileID: 8300000, guid: 6b3aa0e2a48d345d7a25acb76f16bcfe, type: 3}
   isNight: 0
 --- !u!1 &8626349390104355025
 GameObject:
@@ -121,7 +126,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7e038e4c7cf83a14c8e062e6578a2f64, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1

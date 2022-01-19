@@ -416,3 +416,5 @@
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Unity.RenderPipelines.Core.ShaderLibrary.pdb
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Unity.RenderPipelines.Core.Editor.pdb
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Unity.ShaderGraph.Utilities.pdb
+/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Unity.2D.Sprite.Editor.dll
+/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Unity.2D.Sprite.Editor.pdb

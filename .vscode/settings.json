@@ -1,0 +1,15 @@
+{
+    "editor.tokenColorCustomizations": {
+        "[Rider Dark]": {
+            //"comments": "#f9ffa1da",
+            "variables": "#97b5c7be",
+           
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[Firefox Dark]": {
+            "editor.background": "#5c5c5c00"
+        }
+    }
+
+}

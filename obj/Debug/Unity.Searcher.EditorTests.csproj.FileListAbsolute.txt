@@ -230,3 +230,4 @@
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/obj/Debug/Unity.Searcher.EditorTests.csproj.CopyComplete
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/obj/Debug/Unity.Searcher.EditorTests.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/obj/Debug/Unity.Searcher.EditorTests.pdb
+/Users/shayanrostamzade/Projects/Unity/Tail Smasher/obj/Debug/Unity.Searcher.EditorTests.csproj.AssemblyReference.cache

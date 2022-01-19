@@ -220,14 +220,7 @@
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/MacOSCodeSigning.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/MacStandalonePlayerBuildProgram.Data.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/AndroidPlayerBuildProgram.Data.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Drawing.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Web.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Configuration.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/NiceIO.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.EnterpriseServices.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.Transactions.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.IO.Compression.FileSystem.dll
-/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/System.ComponentModel.Composition.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Unity.PlasticSCM.Editor.pdb
 /Users/shayanrostamzade/Projects/Unity/Tail Smasher/Temp/Bin/Debug/Unity.Services.Core.Editor.pdb

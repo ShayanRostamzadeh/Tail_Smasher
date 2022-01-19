@@ -1,20 +1,39 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Drawing;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
+    // this scripts references the enemy game objects using String
+    // todo change if possible
     public String enemyName; 
-    private NavMeshAgent follower;
+    private NavMeshAgent hitter;
     private GameObject player;
     public bool isAlive = true;
+    public float enemySpeed;
+    public GameObject drop;
     
     private void Start()
     {
-        follower = GetComponent<NavMeshAgent>();
-        // Accessing player's gameObject within the scene
+        switch (enemyName)
+        {
+            case "hitter":
+                hitter = GetComponent<NavMeshAgent>();
+                break;
+            case "shooter":
+                // todo complete this section
+                break;
+            case "exploder":
+                // todo complete this section
+                break;
+            default:
+                break;
+        }
+        
+        // Player's reference in scene
         player = GameObject.FindWithTag("Player");
     }
 
@@ -23,9 +42,14 @@ public class EnemyFollow : MonoBehaviour
     {
         if (isAlive)
         {
-            follower.SetDestination(player.transform.position);
-            //Vector3 playerDirection = transform.position - player.transform.position;
-            //transform.Translate(playerDirection);        }
+            // Hitter
+            hitter.speed = enemySpeed;
+            hitter.SetDestination(player.transform.position);
+            
+            // Shooter
+            
+            
+            // Exploder
         }
     }
 
