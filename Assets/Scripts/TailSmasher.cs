@@ -29,7 +29,6 @@ public class TailSmasher : MonoBehaviour
             Instantiate(impactParticle, offset, Quaternion.identity);
             impactParticle.GetComponent<ParticleSystem>().Play();
             target.rigidbody.AddForce(offset * hitForce, ForceMode.Impulse);
-            
             Destroy(target.gameObject,4f);
         }
     }

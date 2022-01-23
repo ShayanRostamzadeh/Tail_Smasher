@@ -1,7 +1,7 @@
 {
     "editor.tokenColorCustomizations": {
         "[Rider Dark]": {
-            //"comments": "#f9ffa1da",
+            "comments": "#f4fc8cda",
             "variables": "#97b5c7be",
            
         }
@@ -9,7 +9,25 @@
     "workbench.colorCustomizations": {
         "[Firefox Dark]": {
             "editor.background": "#5c5c5c00"
-        }
-    }
-
+        },
+    },
+     // Configure glob patterns for excluding files and folders.
+     "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.meta": true,
+        "**/*.*.meta": true,
+        "**/*.unity": true,
+        "**/*.unityproj": true,
+        "**/*.mat": true,
+        "**/*.fbx": true,
+        "**/*.FBX": true,
+        "**/*.tga": true,
+        "**/*.cubemap": true,
+        "**/*.prefab": true,
+        "**/Library": true,
+        "**/ProjectSettings": true,
+        "**/Temp": true
+    },
+       
 }

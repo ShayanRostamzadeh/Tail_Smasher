@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Drawing;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,7 +11,6 @@ public class EnemyFollow : MonoBehaviour
     private GameObject player;
     public bool isAlive = true;
     public float enemySpeed;
-    public GameObject drop;
     
     private void Start()
     {
@@ -44,6 +40,7 @@ public class EnemyFollow : MonoBehaviour
         {
             // Hitter
             hitter.speed = enemySpeed;
+            //hitter.gameObject.GetComponent<Rigidbody>().MoveRotation();
             hitter.SetDestination(player.transform.position);
             
             // Shooter

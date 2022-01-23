@@ -25,6 +25,5 @@ public class GameController : MonoBehaviour
         _chooseMusicRandom = Random.Range(0, backGroundMusic.Length - 1);
         _audioSource.clip = backGroundMusic[_chooseMusicRandom];
         _audioSource.Play();
-        Debug.Log("Shayannnnn");
     }
 }

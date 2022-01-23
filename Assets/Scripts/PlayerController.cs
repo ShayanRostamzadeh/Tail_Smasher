@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
-
-
 public class PlayerController : MonoBehaviour
 {
-    public float forwardForce = 3000f;
+    //[SerializeField] private bool isMoving = false;
+    private Vector3 moveForce;
+    [Range(0f, 1f)] public float driftFactor;
+    public float reverseFactor;
+    public float forwardForce;
     public float rotationFactor = 50f;
+
+    // Do not change the player health initial value
     [HideInInspector] public float playerHealth = 100f;
     
     public bool forwardForceEnable = true;
@@ -23,15 +27,15 @@ public class PlayerController : MonoBehaviour
     
     private AudioSource audioSource;
     public AudioClip carDriftSoundClip;
+    public ParticleSystem smokePS;
+    public ParticleSystem firePS;
 
     private void Start()
     {
         // Physics
         playerRigidbody = GetComponent<Rigidbody>();
-        
         // Audio 
         audioSource = GetComponent<AudioSource>();
-
 
         // todo: how to append one array to another????????
         if (!_gameController.isNight)
@@ -46,11 +50,12 @@ public class PlayerController : MonoBehaviour
     }
     
     private void FixedUpdate()
-    {
+    {   
+        // initialization
         playerRigidbody.centerOfMass = centerOfMass.localPosition;
 
+
         #region Movement
-        
         // The player continuously goes forward without the control of user 
         if(forwardForceEnable)
             ForceForward();
@@ -58,8 +63,32 @@ public class PlayerController : MonoBehaviour
         // Checking if UI buttons are pressed to steer accordingly 
         Steer();
         Reverse();
-        
-        #endregion
+        #endregion Movement
+
+        #region ParticleSystem
+        // Activate smoke particle system when health reaches 50%
+        PlayParticleSystem();
+        #endregion ParticleSystem
+
+    }
+    private void PlayParticleSystem()
+    { 
+        if(20f < playerHealth && playerHealth < 50f)
+        {
+            firePS.gameObject.SetActive(false);
+            smokePS.gameObject.SetActive(true);
+            smokePS.Play();
+        }
+        else if(playerHealth <= 20f )
+        {
+            firePS.gameObject.SetActive(true);
+            smokePS.gameObject.SetActive(false);
+        }
+        else
+        {
+            smokePS.Stop();
+            firePS.Stop();
+        }
     }
 
     #region Button Controller
@@ -73,7 +102,6 @@ public class PlayerController : MonoBehaviour
     }//ButtonPointerUp
     #endregion
     
-    
     #region Impact
     
     // private void OnTriggerEnter(Collider target)
@@ -86,14 +114,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision target)
     {
+        // if (target.gameObject.tag == "PlayGround")
+        //     isMoving = true;
         if (target.gameObject.CompareTag("Enemy"))
         {
             GetDamage(target.gameObject);
             if (playerHealth <= 0f) 
             {
-                DeathSequence();
+                DeathSequence(); 
             }
         }
+        // else
+        // {
+        //     isMoving = false;
+        // }
     }
     
     private void GetDamage(GameObject enemy)
@@ -127,28 +161,45 @@ public class PlayerController : MonoBehaviour
     #region Movement
     private void ForceForward()
     {
-        Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
-        playerRigidbody.velocity = movement;
+        // todo: Add check for isMoving
+        if(forwardForce != 0)
+        {
+        //Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
+        moveForce += transform.forward * forwardForce * Time.deltaTime;
+
+        // restricting the forward applied force to 40f
+        moveForce = Vector3.ClampMagnitude(moveForce, 40f);
+
+        // manipulating the drifting factor
+        moveForce = Vector3.Lerp(moveForce.normalized, transform.forward, driftFactor * Time.deltaTime) * moveForce.magnitude;
+        
+        //playerRigidbody.MovePosition(moveForce);
+        //playerRigidbody.AddForce(moveForce * 100);
+        playerRigidbody.velocity = moveForce;
+        //transform.position += moveForce * Time.deltaTime;
+        }
     } //ForceForward()
     
     public void Reverse()
     {
+        // todo: Add check for isMoving
         if (turnLeft && turnRight)
         {
             forwardForceEnable = false;
             Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
-            playerRigidbody.velocity = -movement;
+            playerRigidbody.velocity = -movement * reverseFactor;
             foreach (var light in rearLights)
             {
                 if (!light.activeSelf)
                     light.SetActive(true);
             }
         }
+        // todo remove this section in the final product
         else if (Input.GetKey(KeyCode.Space))
         {
             forwardForceEnable = false;
             Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
-            playerRigidbody.velocity = -movement;
+            playerRigidbody.velocity = -movement * reverseFactor;
             foreach (var light in rearLights)
             {
                 if (!light.activeSelf)
@@ -172,6 +223,7 @@ public class PlayerController : MonoBehaviour
         if (turnLeft && forwardForceEnable)
         {
             animator.SetBool("turnLeft", true);
+            //transform.Rotate(-Vector3.up * rotationFactor * Time.deltaTime, Space.World);
             playerRigidbody.MoveRotation(Quaternion.Euler(-Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
             audioSource.PlayOneShot(carDriftSoundClip);
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
@@ -180,6 +232,7 @@ public class PlayerController : MonoBehaviour
         else if (turnRight && forwardForceEnable)
         {
             animator.SetBool("turnRight", true);
+            //transform.Rotate(Vector3.up * rotationFactor * Time.deltaTime, Space.World);
             playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
             audioSource.PlayOneShot(carDriftSoundClip);
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, Vector3.forward * 8, carTiltDelay));
