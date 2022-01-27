@@ -46,6 +46,7 @@
      <Compile Include="Assets/Scripts/Timer.cs" />
      <Compile Include="Assets/Scripts/PlayerController.cs" />
      <Compile Include="Assets/Scripts/TailSmasher.cs" />
+     <Compile Include="Assets/Scripts/TestWheelCollider.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.2.8f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

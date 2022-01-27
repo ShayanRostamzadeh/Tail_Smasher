@@ -8,17 +8,20 @@ public class CameraController : MonoBehaviour
     //TODO use cinamachion
 
     private GameObject player;
-    // private Vector3 offsetFromPlayer;
-    // public float smoothFactor = 0.3f;
+    private Vector3 offsetFromPlayer;
+    public float smoothFactor = 0.3f;
 
-    //private void Awake() => offsetFromPlayer = transform.position - player.position;
-    private void Start() => player = GameObject.FindWithTag("Player");
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        offsetFromPlayer = transform.position - player.transform.position;
+    }
 
     private void LateUpdate()
     {
-        // Vector3 desiredPosition = player.position + offsetFromPlayer;
-        // Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothFactor * Time.deltaTime);
-        // transform.position = smoothedPosition;
+        Vector3 desiredPosition = player.transform.position + offsetFromPlayer;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothFactor * Time.deltaTime);
+        transform.position = smoothedPosition;
         if(player.activeSelf)
             transform.LookAt(player.transform);
     }

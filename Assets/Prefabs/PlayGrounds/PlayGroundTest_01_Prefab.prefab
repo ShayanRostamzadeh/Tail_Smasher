@@ -117,8 +117,8 @@ GameObject:
   m_Name: WaterTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &3413504469210630206
 Transform:
@@ -623,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4099302124950925429}
   m_LocalRotation: {x: 0, y: 0.89493436, z: 0, w: 0.44619772}
-  m_LocalPosition: {x: 20.6, y: 0.06, z: 55.4}
+  m_LocalPosition: {x: 23.9, y: 0.06, z: 45.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 1839144856370103513}
   m_Layer: 0
   m_Name: PlayGroundTest_01_Prefab
-  m_TagString: Untagged
+  m_TagString: PlayGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -689,7 +689,7 @@ Transform:
   m_GameObject: {fileID: 4130996045814723695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5006512735086271388}
@@ -783,8 +783,8 @@ GameObject:
   m_Name: WindTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &6157044762994522715
 Transform:
@@ -897,8 +897,8 @@ GameObject:
   m_Name: Store
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5006512735086271388
 Transform:

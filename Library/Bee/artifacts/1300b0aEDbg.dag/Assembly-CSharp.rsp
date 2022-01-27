@@ -349,6 +349,7 @@
 "Assets/Scripts/PausePlayButton.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/TailSmasher.cs"
+"Assets/Scripts/TestWheelCollider.cs"
 "Assets/Scripts/Timer.cs"
 -langversion:9.0
 

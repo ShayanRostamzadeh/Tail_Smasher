@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
-    //[SerializeField] private bool isMoving = false;
+    [SerializeField] private bool isMoving = false;
     private Vector3 moveForce;
     [Range(0f, 1f)] public float driftFactor;
     public float reverseFactor;
@@ -52,12 +52,12 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {   
         // initialization
-        playerRigidbody.centerOfMass = centerOfMass.localPosition;
 
+        playerRigidbody.centerOfMass = centerOfMass.localPosition;
 
         #region Movement
         // The player continuously goes forward without the control of user 
-        if(forwardForceEnable)
+        if(forwardForceEnable && isMoving)
             ForceForward();
         
         // Checking if UI buttons are pressed to steer accordingly 
@@ -114,22 +114,29 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision target)
     {
-        // if (target.gameObject.tag == "PlayGround")
-        //     isMoving = true;
-        if (target.gameObject.CompareTag("Enemy"))
+        switch (target.gameObject.tag)
         {
-            GetDamage(target.gameObject);
-            if (playerHealth <= 0f) 
-            {
-                DeathSequence(); 
-            }
+            case "Enemy":
+                GetDamage(target.gameObject);
+                if (playerHealth <= 0f) 
+                {
+                    DeathSequence(); 
+                }
+                break;
+            case "PlayGround":
+                isMoving = true;
+                break;
+            default:
+                //isMoving = false;
+                break;
         }
-        // else
-        // {
-        //     isMoving = false;
-        // }
     }
     
+    private void OnCollisionExit(Collision other) 
+    {
+        if(other.gameObject.tag == "PlayGround")
+            isMoving = false;
+    }
     private void GetDamage(GameObject enemy)
     {
         string name = enemy.gameObject.GetComponent<EnemyFollow>().enemyName;
@@ -161,8 +168,8 @@ public class PlayerController : MonoBehaviour
     #region Movement
     private void ForceForward()
     {
-        // todo: Add check for isMoving
-        if(forwardForce != 0)
+        
+        if(forwardForce != 0 && isMoving)
         {
         //Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
         moveForce += transform.forward * forwardForce * Time.deltaTime;
@@ -174,16 +181,16 @@ public class PlayerController : MonoBehaviour
         moveForce = Vector3.Lerp(moveForce.normalized, transform.forward, driftFactor * Time.deltaTime) * moveForce.magnitude;
         
         //playerRigidbody.MovePosition(moveForce);
-        //playerRigidbody.AddForce(moveForce * 100);
         playerRigidbody.velocity = moveForce;
+        //playerRigidbody.AddForce(moveForce * 10f, ForceMode.Impulse);
+        Debug.DrawRay(playerRigidbody.position, moveForce, Color.red);
         //transform.position += moveForce * Time.deltaTime;
         }
     } //ForceForward()
     
     public void Reverse()
     {
-        // todo: Add check for isMoving
-        if (turnLeft && turnRight)
+        if (turnLeft && turnRight && isMoving)
         {
             forwardForceEnable = false;
             Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
@@ -223,8 +230,8 @@ public class PlayerController : MonoBehaviour
         if (turnLeft && forwardForceEnable)
         {
             animator.SetBool("turnLeft", true);
-            //transform.Rotate(-Vector3.up * rotationFactor * Time.deltaTime, Space.World);
-            playerRigidbody.MoveRotation(Quaternion.Euler(-Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
+            transform.Rotate(-Vector3.up * rotationFactor * Time.deltaTime, Space.World);
+            //playerRigidbody.MoveRotation(Quaternion.Euler(-Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
             audioSource.PlayOneShot(carDriftSoundClip);
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, -Vector3.forward * 8, carTiltDelay));
             // carTiltDelay += 0.1f;
@@ -232,8 +239,8 @@ public class PlayerController : MonoBehaviour
         else if (turnRight && forwardForceEnable)
         {
             animator.SetBool("turnRight", true);
-            //transform.Rotate(Vector3.up * rotationFactor * Time.deltaTime, Space.World);
-            playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
+            transform.Rotate(Vector3.up * rotationFactor * Time.deltaTime, Space.World);
+            //playerRigidbody.MoveRotation(Quaternion.Euler(Vector3.up * (Time.deltaTime * rotationFactor)) * transform.rotation);
             audioSource.PlayOneShot(carDriftSoundClip);
             // carBody.transform.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, Vector3.forward * 8, carTiltDelay));
             // carTiltDelay += 0.1f;
