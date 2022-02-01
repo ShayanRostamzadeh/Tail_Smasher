@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/Enterance.unity
     guid: 406140aa7bf31eb45b3e144c1197bdad
   - enabled: 1
-    path: Assets/_Scenes/Test.unity
+    path: Assets/_Scenes/Level1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
