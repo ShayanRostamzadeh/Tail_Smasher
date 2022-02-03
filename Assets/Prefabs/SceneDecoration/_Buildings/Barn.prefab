@@ -433,6 +433,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8430843445917414659}
+  - component: {fileID: 6877802593575454016}
+  - component: {fileID: 970936431}
   m_Layer: 0
   m_Name: Barn
   m_TagString: Untagged
@@ -449,7 +451,7 @@ Transform:
   m_GameObject: {fileID: 9100525658167455673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.2, y: 0, z: 99.4}
-  m_LocalScale: {x: 1.4685, y: 1.4685, z: 1.4685}
+  m_LocalScale: {x: 0.41957134, y: 0.41957146, z: 0.41957134}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5296038414540795252}
@@ -460,3 +462,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6877802593575454016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100525658167455673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.7860074, y: 6.0145607, z: 8.085795}
+  m_Center: {x: 0.013627444, y: 2.9978359, z: 0}
+--- !u!208 &970936431
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9100525658167455673}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

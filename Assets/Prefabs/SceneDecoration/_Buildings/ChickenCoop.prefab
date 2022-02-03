@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 7247191635472091384}
   - component: {fileID: 4861571118784314418}
   - component: {fileID: 7247191635472091383}
+  - component: {fileID: 761877221}
   m_Layer: 0
   m_Name: ChickenCoop
   m_TagString: Untagged
@@ -358,9 +359,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6374626869022580199}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 4.5, y: 0, z: 110.6}
-  m_LocalScale: {x: 239.65001, y: 239.65001, z: 239.65001}
+  m_LocalScale: {x: 68.471436, y: 68.471436, z: 68.471436}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3384621896077278677}
@@ -369,7 +370,7 @@ Transform:
   - {fileID: 6104154912138910039}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &7247191635472091384
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -437,3 +438,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.037002888, y: 0.028935935, z: 0.018508585}
   m_Center: {x: 0.006454982, y: 0.002466179, z: 0.009224645}
+--- !u!208 &761877221
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374626869022580199}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.012, y: 0.011000001, z: 0.009000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.001, z: 0.009000001}
+  m_TimeToStationary: 0.5

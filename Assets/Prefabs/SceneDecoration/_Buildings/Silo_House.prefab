@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4690734347812018569}
   - component: {fileID: 8554320981668140588}
   - component: {fileID: 5860303336180343526}
+  - component: {fileID: 852977059333154949}
+  - component: {fileID: 391211908}
   m_Layer: 0
   m_Name: Silo_House
   m_TagString: Untagged
@@ -25,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5355631691702420275}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -38.3, y: 0, z: 115.6}
-  m_LocalScale: {x: 264.4, y: 264.4, z: 264.4}
+  m_LocalScale: {x: 75.54286, y: 75.54285, z: 75.54285}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &8554320981668140588
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -89,3 +91,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &852977059333154949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355631691702420275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05338346, y: 0.035099927, z: 0.09066848}
+  m_Center: {x: 0.007518826, y: -0.0009043364, z: 0.044857603}
+--- !u!208 &391211908
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355631691702420275}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.027, y: 0.018000001, z: 0.045}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.008, y: -0.001, z: 0.045}
+  m_TimeToStationary: 0.5

@@ -113,6 +113,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3637806175787942698}
+  - component: {fileID: 2062772908841876298}
+  - component: {fileID: 8439375029191075942}
   m_Layer: 0
   m_Name: TowerWindmill
   m_TagString: Untagged
@@ -129,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 4122981541139732880}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -28.135, y: 0, z: 63.285}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_LocalScale: {x: 0.8034198, y: 0.80342, z: 0.8034198}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4109787225116737986}
@@ -137,6 +139,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &2062772908841876298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122981541139732880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.6826496, y: 8.798245, z: 4.9666157}
+  m_Center: {x: 0.036975622, y: 4.449588, z: -10.224157}
+--- !u!208 &8439375029191075942
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122981541139732880}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.315, y: 4.405, z: 2.585}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 4.42, z: -10.19}
+  m_TimeToStationary: 0.5
 --- !u!1 &4860670809947824745
 GameObject:
   m_ObjectHideFlags: 0

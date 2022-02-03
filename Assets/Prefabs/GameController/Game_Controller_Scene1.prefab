@@ -78,12 +78,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5892fe903798447e394ec7e142189910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNight: 0
+  maxNumAnimals: 8
   backGroundMusic:
   - {fileID: 8300000, guid: 5d39d8fa374b9449b9c8ed643bb60cfe, type: 3}
   - {fileID: 8300000, guid: 5bb34bc02100748b6b8a31b5438c94e4, type: 3}
   - {fileID: 8300000, guid: 39556c95746f04b2f9c4ee5af8555676, type: 3}
   - {fileID: 8300000, guid: 6b3aa0e2a48d345d7a25acb76f16bcfe, type: 3}
-  isNight: 0
+  animals:
+  - {fileID: 801288500699764484, guid: 20cad781a6cbe47df87f0b6ba1e12e8a, type: 3}
+  grassPlaces:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8626349390104355025
 GameObject:
   m_ObjectHideFlags: 0
