@@ -126,6 +126,15 @@ public class PlayerController : MonoBehaviour
             case "PlayGround":
                 isMoving = true;
                 break;
+
+            case "Animal":
+                _gameController.animalsNum--;
+                target.gameObject.GetComponent<AnimalController>().isAlive = false;
+                target.gameObject.GetComponent<Animator>().SetTrigger("dies");
+                if(target.gameObject.GetComponent<AnimalController>().isAlive)
+                    target.gameObject.GetComponent<GameController>().InstantiateAnimal(target.gameObject);
+                break;
+
             default:
                 //isMoving = false;
                 break;

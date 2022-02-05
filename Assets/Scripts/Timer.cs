@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
         }
 
         if (!GameObject.FindWithTag("Player"))
-            StartCoroutine(SceneReload("test"));
+            StartCoroutine(SceneReload("entrance"));
             
         if (timer <= 0f)
         {
@@ -48,15 +48,15 @@ public class Timer : MonoBehaviour
                 showTime.text = "You Lose";
                 showTime.color = Color.red;
             }
-            StartCoroutine(SceneReload("test"));
+            StartCoroutine(SceneReload("level1"));
         }
     }
 
     private IEnumerator SceneReload(string name)
     {
         yield return new WaitForSeconds(2.5f);
-        if (name == "test")
-            SceneManager.LoadScene("Test");
+        if (name == "level1")
+            SceneManager.LoadScene("Level1");
         else if (name == "enterance")
             SceneManager.LoadScene("Enterance");
     }

@@ -341,6 +341,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/BullShit/UiButtonPlayerProber.cs"
+"Assets/Scripts/AnimalController.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyFollow.cs"
 "Assets/Scripts/EnteranceScene.cs"

@@ -19,6 +19,6 @@ public class EnteranceScene : MonoBehaviour
         
     }
 
-    public void LoadGameScene() => SceneManager.LoadScene("Test");
+    public void LoadGameScene() => SceneManager.LoadScene("Level1");
     public void QuitTheGame() => Application.Quit();
 }

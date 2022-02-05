@@ -1,0 +1,4 @@
+#Sat Feb 05 16:10:06 IRST 2022
+base.0=/Users/shayanrostamzade/Projects/Unity/Tail Smasher/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/build/intermediates/dex/release/mergeDexRelease/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

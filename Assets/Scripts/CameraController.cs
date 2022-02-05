@@ -19,6 +19,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
+        // todo add if the player is alive
         Vector3 desiredPosition = player.transform.position + offsetFromPlayer;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothFactor * Time.deltaTime);
         transform.position = smoothedPosition;

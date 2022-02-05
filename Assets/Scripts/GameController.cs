@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     // Checking section
     public bool isNight = false;
     [SerializeField] private int maxNumAnimals = 8;
-    private int animalsNum = 0;
+    [HideInInspector] public int animalsNum = 0;
 
     // Audio
     public AudioClip[] backGroundMusic;
@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     public GameObject[] animals;
 
     // Other
-    public Transform[] grassPlaces;
+
 
 
 
@@ -43,27 +43,14 @@ public class GameController : MonoBehaviour
         _audioSource = GetComponentInChildren<AudioSource>();
         PlayBackGrounMusic();
 
-        // Instantiate(cow, spawnPos, Quaternion.identity);
-        // StartCoroutine(Spawn());
+        AnimalInitialInstantiation();
+
     }
 
-    // private IEnumerator Spawn()
-    // {
-    //     yield return new WaitForSeconds(2f);
-    //     NavMeshHit hit;
-    //     if(NavMesh.SamplePosition(spawnPos, out hit, 2f, 0))
-    //     {
-    //         Vector3 pos = hit.position;
-    //         //cow.GetComponent<NavMeshAgent>().enabled = false;
-    //         cow.GetComponent<NavMeshAgent>().Warp(pos);
-    //         cow.transform.position = pos;
-    //         //cow.GetComponent<NavMeshAgent>().enabled = true;
-    //     }
-    // }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        AnimalController();
+        
     }
 
     private void PlayBackGrounMusic()
@@ -73,56 +60,43 @@ public class GameController : MonoBehaviour
         _audioSource.Play();
     }
 
-    private void AnimalController()
+
+    #region Animal
+
+    private void AnimalInitialInstantiation()
     {
-        // the number of animals and grass places is 8
-        // for(int i = 0; i < 8; i++)
-        // {
-        //     int animalRandomDestination = Random.Range(0, grassPlaces.Length - 1);
-        //     Instantiate(animals[i], grassPlaces[i].position, Quaternion.identity);
-        //     animals[i].GetComponent<NavMeshAgent>().SetDestination(grassPlaces[animalRandomDestination].position);
-        //     if(animals[i].transform.position != grassPlaces[animalRandomDestination].position)
-        //     {
-        //         animals[i].GetComponent<Animator>().SetBool("changeDestination", true);
-        //     }
-        //     else if(animals[i].transform.position == grassPlaces[animalRandomDestination].position)
-        //     {
-        //         animals[i].GetComponent<Animator>().SetBool("changeDestination", false);
-        //     }
-        // }
-
-
-        if(animalsNum <= maxNumAnimals)
+        // Instantiation and destination set
+        foreach(GameObject animal in animals)
         {
-            int randAnimal = Random.Range(0, animals.Length - 1);
-            int animalRandomInitialPos = Random.Range(0, grassPlaces.Length - 1);
-            int animalRandomFinalPos = Random.Range(0, grassPlaces.Length - 1);
-            GameObject chosenAnimal = animals[randAnimal];
-            Vector3 spawnPosition = grassPlaces[animalRandomInitialPos].position;
-
-            // Instantiating animals
-            chosenAnimal = Instantiate(chosenAnimal, spawnPosition, Quaternion.identity);
+            if(animalsNum < maxNumAnimals)
+            {
+            Instantiate(animal, SetAnimalSpawnPos(), Quaternion.identity);
             animalsNum++;
-
-            // Setting the destination randomly between some grass places
-            chosenAnimal.GetComponent<NavMeshAgent>().SetDestination(grassPlaces[animalRandomFinalPos].position);
-
-            // Reached the destination
-            if(chosenAnimal.transform.position != grassPlaces[animalRandomFinalPos].position)
-            {
-                chosenAnimal.GetComponent<Animator>().SetBool("changeDestination", true);
             }
-            else if(chosenAnimal.transform.position == grassPlaces[animalRandomFinalPos].position)
-            {
-                chosenAnimal.GetComponent<Animator>().SetBool("changeDestination", false);
-            }
-
         }
-    }//AnimalController
+    }//AnimalInitialInstantiation
 
-    private void SetAnimalDestination()
+    public void InstantiateAnimal(GameObject animal)
     {
-
+        if(animalsNum < maxNumAnimals)
+        {
+        Instantiate(animal, SetAnimalSpawnPos(), Quaternion.identity);
+        animalsNum++;
+        }
     }
+
+    private Vector3 SetAnimalSpawnPos()
+    {
+        Vector3 randomPosition = new Vector3(Random.Range(-110f, 110f), 0, Random.Range(-110f, 110f));
+
+        NavMeshHit hit;
+        if(NavMesh.SamplePosition(randomPosition, out hit, 5f, NavMesh.AllAreas))
+        {
+            randomPosition = hit.position;
+        }
+        return randomPosition;
+    }//SetAnimalSpawnPos
+
+    #endregion Animal
 
 }
