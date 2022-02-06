@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactParticle: {fileID: 5284082524984190138, guid: 9e6e1a6cfefe1443a9c5ea2eba626df9,
     type: 3}
+  _gameController: {fileID: 0}
   hitForce: 10
 --- !u!82 &6488951737612031354
 AudioSource:

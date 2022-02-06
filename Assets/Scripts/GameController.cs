@@ -76,13 +76,22 @@ public class GameController : MonoBehaviour
         }
     }//AnimalInitialInstantiation
 
-    public void InstantiateAnimal(GameObject animal)
+    public void InstantiateAnimal(String tag)
     {
-        if(animalsNum < maxNumAnimals)
+        if(animalsNum <= maxNumAnimals)
         {
-        Instantiate(animal, SetAnimalSpawnPos(), Quaternion.identity);
-        animalsNum++;
+            for(int i = 0; i < animals.Length; i++)
+            {
+                if(animals[i].CompareTag(tag))
+                {
+                    Debug.Log("Instantiating animal...........");
+                    Instantiate(animals[i], SetAnimalSpawnPos(), Quaternion.identity);
+                    animalsNum++;
+                    continue;
+                }
+            }
         }
+
     }
 
     private Vector3 SetAnimalSpawnPos()

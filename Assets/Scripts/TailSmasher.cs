@@ -9,7 +9,7 @@ public class TailSmasher : MonoBehaviour
     private AudioSource explosionSound;
     public GameObject impactParticle;
 
-    private GameController gameController;
+    public GameController _gameController;
     [SerializeField] private float hitForce = 100f;
 
     private void Start()
@@ -36,11 +36,15 @@ public class TailSmasher : MonoBehaviour
                 break;
 
             case "Animal":
-                gameController.animalsNum--;
+                _gameController.animalsNum--;
                 target.gameObject.GetComponent<AnimalController>().isAlive = false;
+                target.gameObject.GetComponent<NavMeshAgent>().enabled = false;
                 target.gameObject.GetComponent<Animator>().SetTrigger("dies");
-                if(target.gameObject.GetComponent<AnimalController>().isAlive)
-                    target.gameObject.GetComponent<GameController>().InstantiateAnimal(target.gameObject);
+                if(!target.gameObject.GetComponent<AnimalController>().isAlive)
+                {
+                    target.gameObject.GetComponent<GameController>().InstantiateAnimal("Animal");
+                }
+                
                 break;
 
 
@@ -49,6 +53,6 @@ public class TailSmasher : MonoBehaviour
             break;
         }
  
-    }
+    }//OnCollisionEnter
 
 }
