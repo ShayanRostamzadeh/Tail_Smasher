@@ -28,7 +28,7 @@ public class TestWheelCollider : MonoBehaviour
         horizonralIn = Input.GetAxis("Horizontal");
         foreach(WheelCollider wheel in frontWheels)
         {
-            wheel.steerAngle = horizonralIn * 45f;
+            wheel.steerAngle = horizonralIn * 60f;
         }
         Debug.Log(horizonralIn * 60f);
     }

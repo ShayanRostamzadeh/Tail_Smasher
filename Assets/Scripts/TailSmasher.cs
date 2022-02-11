@@ -35,18 +35,6 @@ public class TailSmasher : MonoBehaviour
                 Destroy(target.gameObject,4f);
                 break;
 
-            case "Animal":
-                _gameController.animalsNum--;
-                target.gameObject.GetComponent<AnimalController>().isAlive = false;
-                target.gameObject.GetComponent<NavMeshAgent>().enabled = false;
-                target.gameObject.GetComponent<Animator>().SetTrigger("dies");
-                if(!target.gameObject.GetComponent<AnimalController>().isAlive)
-                {
-                    target.gameObject.GetComponent<GameController>().InstantiateAnimal("Animal");
-                }
-                
-                break;
-
 
 
             default:
@@ -54,5 +42,16 @@ public class TailSmasher : MonoBehaviour
         }
  
     }//OnCollisionEnter
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<AnimalController>())
+        {
+            _gameController.animalsNum--;
+            other.gameObject.GetComponent<AnimalController>().isAlive = false;
+            other.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            other.gameObject.GetComponent<Animator>().SetTrigger("dies");
+        }
+    }//OnTriggerEnter
 
 }

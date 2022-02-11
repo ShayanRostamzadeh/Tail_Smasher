@@ -13,6 +13,7 @@ public class AnimalController : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator animator;
     private AudioSource audioSource;
+    private GameController _gameController;
 
 
     void Start()
@@ -22,6 +23,7 @@ public class AnimalController : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        _gameController = FindObjectOfType<GameController>();
 
         // Randomly playing audioclips
         InvokeRepeating("AudioPlay", Random.Range(1f, 10f), Random.Range(20f, 30f));
@@ -39,6 +41,8 @@ public class AnimalController : MonoBehaviour
         }
         else if(!isAlive)
         {
+            _gameController.InstantiateAnimal(tag);
+            //Debug.Log(tag);
             Destroy(this.gameObject, 2.5f);
         }
 

@@ -50,7 +50,8 @@ public class GameController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        animalsNum = FindObjectsOfType<AnimalController>().Length;   
+        //Debug.Log("Animals number: " + animalsNum);
     }
 
     private void PlayBackGrounMusic()
@@ -70,24 +71,24 @@ public class GameController : MonoBehaviour
         {
             if(animalsNum < maxNumAnimals)
             {
-            Instantiate(animal, SetAnimalSpawnPos(), Quaternion.identity);
-            animalsNum++;
+                Instantiate(animal, SetAnimalSpawnPos(), Quaternion.identity);
+                animalsNum++;
             }
         }
     }//AnimalInitialInstantiation
 
     public void InstantiateAnimal(String tag)
     {
-        if(animalsNum <= maxNumAnimals)
+        bool isInstantiated = false;
+        if(animalsNum < maxNumAnimals)
         {
             for(int i = 0; i < animals.Length; i++)
             {
-                if(animals[i].CompareTag(tag))
+                if(animals[i].CompareTag(tag) && !isInstantiated)
                 {
-                    Debug.Log("Instantiating animal...........");
                     Instantiate(animals[i], SetAnimalSpawnPos(), Quaternion.identity);
                     animalsNum++;
-                    continue;
+                    isInstantiated = true;
                 }
             }
         }

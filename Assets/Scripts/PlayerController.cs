@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private bool isMoving = false;
     private Vector3 moveForce;
-    [Range(0f, 1f)] public float driftFactor;
+    public float maxSpeed = 30f;
+    [Range(0f, 1000f)] public float driftFactor;
     public float reverseFactor;
     public float forwardForce;
     public float rotationFactor = 50f;
@@ -104,14 +106,6 @@ public class PlayerController : MonoBehaviour
     #endregion
     
     #region Impact
-    
-    // private void OnTriggerEnter(Collider target)
-    // {
-    //     if (target.gameObject.CompareTag("Enemy"))
-    //     {
-    //         DeathSequence();
-    //     }
-    // }
 
     private void OnCollisionEnter(Collision target)
     {
@@ -127,27 +121,26 @@ public class PlayerController : MonoBehaviour
             case "PlayGround":
                 isMoving = true;
                 break;
-
-            case "Animal":
-                _gameController.animalsNum--;
-                target.gameObject.GetComponent<AnimalController>().isAlive = false;
-                target.gameObject.GetComponent<NavMeshAgent>().enabled = false;
-                target.gameObject.GetComponent<Animator>().SetTrigger("dies");
-                if(!target.gameObject.GetComponent<AnimalController>().isAlive)
-                {
-                    target.gameObject.GetComponent<GameController>().InstantiateAnimal("Animal");
-                }
-                break;
-
             default:
                 //isMoving = false;
                 break;
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<AnimalController>())
+        {
+            _gameController.animalsNum--;
+            other.gameObject.GetComponent<AnimalController>().isAlive = false;
+            other.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            other.gameObject.GetComponent<Animator>().SetTrigger("dies");
+        }
+    }
+
     private void OnCollisionExit(Collision other) 
     {
-        if(other.gameObject.tag == "PlayGround")
+        if(other.gameObject.CompareTag("PlayGround"))
             isMoving = false;
     }
     private void GetDamage(GameObject enemy)
@@ -184,20 +177,24 @@ public class PlayerController : MonoBehaviour
         
         if(forwardForce != 0 && isMoving)
         {
-        //Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
-        moveForce += transform.forward * forwardForce * Time.deltaTime;
+            //Vector3 movement = transform.forward * (forwardForce * Time.deltaTime);
+            moveForce += transform.forward * forwardForce * Time.deltaTime;
 
-        // restricting the forward applied force to 40f
-        moveForce = Vector3.ClampMagnitude(moveForce, 40f);
+            // restricting the forward applied force to 40f
+            moveForce = Vector3.ClampMagnitude(moveForce, 40f);
+            
+            // manipulating the drifting factor
+            moveForce = Vector3.Lerp(moveForce.normalized, transform.forward, driftFactor * Time.deltaTime) * moveForce.magnitude;
 
-        // manipulating the drifting factor
-        moveForce = Vector3.Lerp(moveForce.normalized, transform.forward, driftFactor * Time.deltaTime) * moveForce.magnitude;
-        
-        //playerRigidbody.MovePosition(moveForce);
-        playerRigidbody.velocity = moveForce;
-        //playerRigidbody.AddForce(moveForce * 10f, ForceMode.Impulse);
-        Debug.DrawRay(playerRigidbody.position, moveForce, Color.red);
-        //transform.position += moveForce * Time.deltaTime;
+            if (playerRigidbody.velocity.magnitude >= maxSpeed)
+                playerRigidbody.velocity = Vector3.ClampMagnitude(playerRigidbody.velocity, maxSpeed);
+            
+            playerRigidbody.AddForce(moveForce * 700f);
+            
+            
+            Debug.DrawRay(playerRigidbody.position, moveForce, Color.blue);
+            Debug.Log("Move force: " + playerRigidbody.velocity.magnitude);
+
         }
     } //ForceForward()
     

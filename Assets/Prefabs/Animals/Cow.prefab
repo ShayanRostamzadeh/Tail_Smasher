@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 5575409662969651668}
   m_Layer: 0
   m_Name: Cow
-  m_TagString: Animal
+  m_TagString: Animal_Cow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -578,7 +578,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2479093149841794894}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1095905, y: 4.988966, z: 8.802921}

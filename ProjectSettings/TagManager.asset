@@ -8,7 +8,10 @@ TagManager:
   - FrontLight
   - RearLight
   - PlayGround
-  - Animal
+  - Animal_Horse
+  - Animal_Cow
+  - Animal_Pig
+  - Animal_Sheep
   layers:
   - Default
   - TransparentFX

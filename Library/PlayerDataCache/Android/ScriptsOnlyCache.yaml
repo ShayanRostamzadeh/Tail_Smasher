@@ -43,6 +43,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.UI.DebugUIHandlerVector4
     - UnityEngine.Rendering.UI.UIFoldout
     Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.ShaderGraph.Editor.dll:
     - UnityEditor.ShaderGraph.SubGraphAsset
@@ -152,39 +153,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5206}
     - Class: 114
-      Script: {instanceID: 5422}
+      Script: {instanceID: 5424}
     - Class: 114
-      Script: {instanceID: 5532}
+      Script: {instanceID: 5534}
     - Class: 114
-      Script: {instanceID: 5648}
+      Script: {instanceID: 5650}
     - Class: 114
-      Script: {instanceID: 5724}
+      Script: {instanceID: 5726}
     - Class: 114
-      Script: {instanceID: 5732}
+      Script: {instanceID: 5734}
     - Class: 114
-      Script: {instanceID: 5836}
+      Script: {instanceID: 5838}
     - Class: 114
-      Script: {instanceID: 5870}
+      Script: {instanceID: 5872}
     - Class: 114
-      Script: {instanceID: 5906}
+      Script: {instanceID: 5908}
     - Class: 114
-      Script: {instanceID: 5974}
+      Script: {instanceID: 5976}
     - Class: 114
-      Script: {instanceID: 5986}
+      Script: {instanceID: 5988}
     - Class: 114
-      Script: {instanceID: 6084}
+      Script: {instanceID: 6086}
     - Class: 114
-      Script: {instanceID: 6198}
+      Script: {instanceID: 6200}
     - Class: 114
-      Script: {instanceID: 6306}
+      Script: {instanceID: 6308}
     - Class: 114
-      Script: {instanceID: 6626}
+      Script: {instanceID: 6628}
     - Class: 114
-      Script: {instanceID: 6936}
+      Script: {instanceID: 6938}
     - Class: 114
-      Script: {instanceID: 7238}
+      Script: {instanceID: 7240}
     - Class: 114
-      Script: {instanceID: 7476}
+      Script: {instanceID: 7478}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -271,23 +272,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5202}
     - Class: 114
-      Script: {instanceID: 5532}
+      Script: {instanceID: 5348}
     - Class: 114
-      Script: {instanceID: 5974}
+      Script: {instanceID: 5534}
     - Class: 114
-      Script: {instanceID: 6164}
+      Script: {instanceID: 5976}
     - Class: 114
-      Script: {instanceID: 6364}
+      Script: {instanceID: 6166}
     - Class: 114
-      Script: {instanceID: 6552}
+      Script: {instanceID: 6366}
     - Class: 114
-      Script: {instanceID: 6626}
+      Script: {instanceID: 6554}
     - Class: 114
-      Script: {instanceID: 7260}
+      Script: {instanceID: 6628}
     - Class: 114
-      Script: {instanceID: 7544}
+      Script: {instanceID: 7262}
     - Class: 114
-      Script: {instanceID: 551922}
+      Script: {instanceID: 7546}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -321,8 +322,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 238
-      Script: {instanceID: 0}
-    - Class: 258
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
@@ -905,6 +904,12 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: c20fe4ed7c8ba40ccc0885e14cda79c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimalController
+  - hash:
+      serializedVersion: 2
       Hash: 164221013889a03b3422d30debb35460
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering
@@ -1205,7 +1210,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerButton
   - hash:
       serializedVersion: 2
-      Hash: dd94f2235ec93cc0777f9bf6c5552c17
+      Hash: d25eb2d1e4e4060f0405ea134b9419e6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1241,7 +1246,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerFoldout
   - hash:
       serializedVersion: 2
-      Hash: 60ce09658c4a8a0282804d7ecd93091f
+      Hash: 5759aba75047225fcecb2a73e0c004aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TailSmasher
@@ -1275,12 +1280,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
     className: VFXRaycastBinder
-  - hash:
-      serializedVersion: 2
-      Hash: 9f6997a28de38f1a651253dc2f5d75eb
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AnimalController
   platform: 13
   scenePathNames:
   - Assets/_Scenes/Enterance.unity

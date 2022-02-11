@@ -80,22 +80,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNight: 0
   maxNumAnimals: 8
+  animalsNum: 0
   backGroundMusic:
   - {fileID: 8300000, guid: 5d39d8fa374b9449b9c8ed643bb60cfe, type: 3}
   - {fileID: 8300000, guid: 5bb34bc02100748b6b8a31b5438c94e4, type: 3}
   - {fileID: 8300000, guid: 39556c95746f04b2f9c4ee5af8555676, type: 3}
   - {fileID: 8300000, guid: 6b3aa0e2a48d345d7a25acb76f16bcfe, type: 3}
   animals:
-  - {fileID: 801288500699764484, guid: 20cad781a6cbe47df87f0b6ba1e12e8a, type: 3}
-  grassPlaces:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2479093149841794894, guid: 20cad781a6cbe47df87f0b6ba1e12e8a, type: 3}
+  - {fileID: 2479093149841794894, guid: 20cad781a6cbe47df87f0b6ba1e12e8a, type: 3}
+  - {fileID: 5639047035198578397, guid: 5c056cfb520da4478b1a04041b8f4828, type: 3}
+  - {fileID: 5639047035198578397, guid: 5c056cfb520da4478b1a04041b8f4828, type: 3}
+  - {fileID: 5639047035198578397, guid: 5c056cfb520da4478b1a04041b8f4828, type: 3}
+  - {fileID: 2974628030988840526, guid: 9f9de429abeff475e909fa599bee673c, type: 3}
+  - {fileID: 5791456902420817211, guid: c604f0fdde75b4a3ab50d30c4ef99317, type: 3}
+  - {fileID: 5791456902420817211, guid: c604f0fdde75b4a3ab50d30c4ef99317, type: 3}
 --- !u!1 &8626349390104355025
 GameObject:
   m_ObjectHideFlags: 0
